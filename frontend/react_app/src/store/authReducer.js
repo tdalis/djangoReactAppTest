@@ -1,18 +1,18 @@
 import * as actionTypes from './authActionTypes';
 
-// ##########################################################
+// ########################################################
 // Initial State
-// ##########################################################
+// ########################################################
 
 export const initialState = {
-    error: null,
+    error: null, 
     loading: false,
     token: null
 }
 
-// ##########################################################
+// ########################################################
 // A simple function to update the state with new values
-// ##########################################################
+// ########################################################
 
 const updateObject = (oldObject, updatedProperties) => {
     return {
@@ -21,10 +21,9 @@ const updateObject = (oldObject, updatedProperties) => {
     }
 }
 
-// ##########################################################
+// ########################################################
 // Different Reducer Functions which change the store state
-// ##########################################################
-
+// ########################################################
 const authStartReducer = (state, action) => {
     return updateObject(state, {
         error: null,
@@ -53,11 +52,11 @@ const authLogoutReducer = (state, action) => {
     });
 }
 
-// ##########################################################
-// The Main Reducer
-// ##########################################################
+// ########################################################
+// The Main Reducer 
+// ########################################################
 
-const Reducer = (state = initialState, action) => {
+const Reducer = (state=initialState, action) => {
     switch (action.type) {
         case actionTypes.AUTH_START: return authStartReducer(state, action);
         case actionTypes.AUTH_SUCCESS: return authSuccessReducer(state, action);
@@ -68,4 +67,4 @@ const Reducer = (state = initialState, action) => {
     }
 }
 
-export default Reducer;
+export default Reducer
